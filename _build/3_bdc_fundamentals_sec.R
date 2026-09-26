@@ -305,6 +305,9 @@ write_xlsx(
   file.path(out_dir, "bdc_fundamentals.xlsx")
 )
 
+out_dir_2    <- "/Users/fortressokorie/nf-private-credit/_dictionaries"
+write.csv(dictionary, file.path(out_dir_2, "bdc_fundamentals_sec_dictionary.csv"))
+
 # -----------------------------------------------------------------------------
 # OPTIONAL: ATTACH TO THE DAILY PRICE PANEL
 # -----------------------------------------------------------------------------
