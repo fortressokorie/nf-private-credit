@@ -1,0 +1,111 @@
+---
+title: "private_credit_datasets"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(quantmod)
+library(dplyr)
+library(tidyverse)
+library(writexl)
+```
+
+```{r}
+# scrape BIZD
+
+getSymbols('BIZD', src = 'yahoo', 
+           from = "2010-01-01", to = Sys.Date())
+
+
+bizd_data <- data.frame(
+  BIZD,
+  date = as.Date(rownames(data.frame(BIZD)))
+)
+
+write_xlsx(bizd_data, "/Users/fortressokorie/Desktop/Naafey_Fortress/bizd_data.xlsx")
+```
+
+
+```{r}
+# scrape PSP
+
+getSymbols('PSP', src = 'yahoo', 
+           from = "2010-01-01", to = Sys.Date())
+
+
+psp_data <- data.frame(
+  PSP,
+  date = as.Date(rownames(data.frame(PSP)))
+)
+
+write_xlsx(psp_data, "/Users/fortressokorie/Desktop/Naafey_Fortress/psp_data.xlsx")
+```
+
+
+```{r}
+# scrape PCMM
+
+getSymbols('PCMM', src = 'yahoo', 
+           from = "2010-01-01", to = Sys.Date())
+
+
+pcmm_data <- data.frame(
+  PCMM,
+  date = as.Date(rownames(data.frame(PCMM)))
+)
+
+write_xlsx(pcmm_data, "/Users/fortressokorie/Desktop/Naafey_Fortress/pcmm_data.xlsx")
+```
+
+
+```{r}
+# scrape PRIV 
+
+getSymbols('PRIV', src = 'yahoo', 
+           from = "2010-01-01", to = Sys.Date())
+
+
+priv_data <- data.frame(
+  PRIV,
+  date = as.Date(rownames(data.frame(PRIV)))
+)
+
+write_xlsx(priv_data, "/Users/fortressokorie/Desktop/Naafey_Fortress/priv_data.xlsx")
+```
+
+
+```{r}
+# scrape HYIN
+
+getSymbols('HYIN', src = 'yahoo', 
+           from = "2010-01-01", to = Sys.Date())
+
+
+hyin_data <- data.frame(
+  HYIN,
+  date = as.Date(rownames(data.frame(HYIN)))
+)
+
+write_xlsx(hyin_data, "/Users/fortressokorie/Desktop/Naafey_Fortress/hyin_data.xlsx")
+```
+
+
+```{r}
+# scrape fed funds futures
+
+getSymbols('ZQ=F', src = 'yahoo', 
+           from = "2010-01-01", to = Sys.Date())
+
+
+zq_data <- data.frame(
+  `ZQ=F`,
+  date = as.Date(rownames(data.frame(`ZQ=F`)))
+)
+
+write_xlsx(zq_data, "/Users/fortressokorie/Desktop/Naafey_Fortress/zq_data.xlsx")
+```
+
+
+
