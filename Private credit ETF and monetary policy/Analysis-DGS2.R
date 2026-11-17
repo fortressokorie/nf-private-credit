@@ -164,3 +164,4 @@ for (x in irfs) {
 
 # Sample sizes
 sapply(irfs, function(x) x$nobs)
+
